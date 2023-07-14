@@ -33,7 +33,7 @@ export const TransactionsContext = createContext({} as ITransactionContextType)
 export function TransactionsProvider({ children }: ITransactionsProviderProps) {
   function getTransactionsFromLocalStorage(): ITransaction[] {
     const storedStateAsJSON = localStorage.getItem(
-      '@dt-money:transactions-1.0.0',
+      import.meta.env.VITE_STORAGE_NAME,
     )
     if (storedStateAsJSON) {
       return JSON.parse(storedStateAsJSON)
@@ -90,7 +90,7 @@ export function TransactionsProvider({ children }: ITransactionsProviderProps) {
 
   useEffect(() => {
     const stateJSON = JSON.stringify(initialTransactions)
-    localStorage.setItem('@dt-money:transactions-1.0.0', stateJSON)
+    localStorage.setItem(import.meta.env.VITE_STORAGE_NAME, stateJSON)
     setTransactions(initialTransactions)
   }, [initialTransactions])
 
