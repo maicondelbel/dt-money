@@ -9,6 +9,7 @@ const BUTTON_VARIANTS = {
     color: ${(props) => props.theme.white};
     background-color: ${(props) => props.theme['red-500']};
     padding: 0.75rem;
+    border: solid 1px transparent;
 
     &:hover {
       background-color: ${(props) => props.theme['red-300']};
@@ -18,6 +19,7 @@ const BUTTON_VARIANTS = {
   solid: css`
     color: ${(props) => props.theme.white};
     background-color: ${(props) => props.theme['green-500']};
+    border: solid 1px transparent;
 
     &:hover {
       background-color: ${(props) => props.theme['green-300']};
